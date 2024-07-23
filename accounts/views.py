@@ -9,6 +9,10 @@ def home(request):
     songs = Song.objects.all()
     return render(request, 'home.html',{'songs':songs})
 
+def logout(request):
+    logout(request)
+    return redirect('login')
+
 def register(request):
     if request.method == 'POST':
         form = UserRegistrationForm(request.POST)
